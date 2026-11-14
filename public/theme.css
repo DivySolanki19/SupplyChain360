@@ -1,0 +1,408 @@
+/* SupplyChain360: a warm industrial operations board with horizontal navigation. */
+:root {
+  --accent: #a94312;
+  --light: #fff0de;
+  --line: #dfddd5;
+  color: #292d26;
+  background: #f4f2ec;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.layout {
+  display: block;
+}
+aside {
+  background: #272e26;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 42px;
+  min-height: 84px;
+  border-bottom: 4px solid #e48239;
+}
+aside .brand {
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+.logo {
+  background: #efaa65;
+  color: #272e26;
+  border: 0;
+  border-radius: 4px;
+  transform: rotate(-5deg);
+  width: 37px;
+  height: 37px;
+}
+.logo svg {
+  width: 25px;
+  height: 25px;
+}
+aside > p {
+  display: none;
+}
+aside nav {
+  display: flex;
+  gap: 10px;
+  align-self: stretch;
+  align-items: center;
+}
+nav a {
+  border-radius: 4px;
+  color: #ccd3c7;
+  font-weight: 600;
+  padding: 12px 18px;
+}
+nav a:hover,
+nav a[aria-current] {
+  background: #414d39;
+  color: #fff;
+}
+nav a:first-child:not([aria-current]) {
+  background: transparent;
+  color: #ccd3c7;
+}
+.side-bottom {
+  padding: 0;
+  border: 0;
+  margin: 0 0 0 auto;
+}
+.side-bottom p,
+.side-bottom .pill {
+  display: none;
+}
+.source-link {
+  color: #e0daca;
+  font-size: 12px;
+  white-space: nowrap;
+}
+main {
+  max-width: 1440px;
+  padding: 26px 5%;
+  margin: auto;
+}
+.topline {
+  border: 0;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #686d61;
+  font-family: Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.pill {
+  background: #e4e8da;
+  color: #495738;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+}
+.hero {
+  margin: 30px 0;
+  padding: 0 0 28px;
+  border-bottom: 2px solid #353c2e;
+  min-height: 150px;
+  gap: 35px;
+}
+.eyebrow {
+  color: #a94312;
+  letter-spacing: 2px;
+}
+.hero h1 {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  letter-spacing: -2.5px;
+  line-height: 1.08;
+}
+.hero h1 span {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #a94312;
+}
+.hero p {
+  color: #65695d;
+  font-size: 15px;
+}
+.hero .actions {
+  align-self: end;
+  flex-wrap: nowrap;
+}
+button {
+  border-radius: 5px;
+  border-color: #c9cbbf;
+  color: #3c4932;
+  background: #fffefa;
+  padding: 11px 17px;
+}
+button.primary {
+  background: #a94312;
+  border-color: #a94312;
+  color: #fff;
+}
+button:hover {
+  background: #f8e8d7;
+  border-color: #a94312;
+}
+.toolbar {
+  background: #eaece2;
+  border: 1px solid #d9ddce;
+  border-radius: 5px;
+  padding: 18px 22px;
+}
+.toolbar label {
+  color: #505d43;
+  letter-spacing: 0.3px;
+  font-size: 11px;
+}
+input,
+select,
+textarea {
+  border-color: #c8cdbd;
+  border-radius: 4px;
+  background: #fffefa;
+  color: #30382a;
+}
+.stats {
+  gap: 14px;
+}
+.stat {
+  border-radius: 5px;
+  background: #fffefa;
+  border: 1px solid #deded3;
+  border-top: 4px solid #566b40;
+  padding: 20px;
+}
+.stat:nth-child(3) {
+  border-top-color: #b64c1c;
+  background: #fff3e7;
+}
+.stat .label {
+  color: #565f4d;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.stat .value {
+  font-family: Consolas, monospace;
+  font-size: 32px;
+  font-weight: 700;
+  color: #30392a;
+  letter-spacing: -1.5px;
+}
+.stat:nth-child(3) .value {
+  color: #a94312;
+}
+.stat .note {
+  font-size: 11px;
+  color: #646b5b;
+}
+.grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 20px;
+}
+.panel {
+  border-radius: 5px;
+  border-color: #dbddd1;
+  background: #fffefa;
+  padding: 25px;
+  box-shadow: 0 3px 0 #e4e3da;
+}
+h2 {
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+.panel-head {
+  padding-bottom: 16px;
+  border-bottom: 1px dashed #d2d5c8;
+  margin-bottom: 16px;
+}
+.muted,
+.subtext,
+.chart-detail,
+.legend,
+td small,
+details {
+  color: #626b57;
+}
+.bar {
+  background: repeating-linear-gradient(
+    135deg,
+    #80925e 0,
+    #80925e 8px,
+    #758856 8px,
+    #758856 10px
+  );
+  border-radius: 3px 3px 0 0;
+}
+.bar-group:last-child .bar {
+  background: #b9511e;
+}
+.bar-group:hover,
+.bar-group[aria-pressed="true"] {
+  background: #eeeade;
+}
+.chart {
+  height: 230px;
+  gap: 22px;
+  background: repeating-linear-gradient(
+    to top,
+    transparent 0,
+    transparent 49px,
+    #e9ebdf 50px
+  );
+}
+.bar-label {
+  font-family: Consolas, monospace;
+  color: #525d44;
+}
+.dot {
+  background: #80925e;
+}
+.badge {
+  background: #e9eddf;
+  color: #445932;
+  border-radius: 4px;
+}
+.badge.high {
+  background: #fce5dc;
+  color: #9c3420;
+}
+.badge.medium {
+  background: #f9edd0;
+  color: #795712;
+}
+.badge.low {
+  background: #e7eedc;
+  color: #3d5b2c;
+}
+.forecast-row {
+  border-bottom: 1px dashed #d5d9c9;
+}
+.forecast-row button {
+  white-space: nowrap;
+  align-self: center;
+}
+th {
+  background: #e9ede0;
+  color: #4c5e3b;
+}
+td {
+  border-bottom-color: #e5e7db;
+}
+tbody tr:hover {
+  background: #f3f5e9;
+}
+#inventory,
+#suppliers {
+  border-top: 3px solid #52673c;
+}
+summary {
+  color: #435535;
+}
+footer {
+  color: #68705e;
+  font-family: Consolas, monospace;
+  font-size: 11px;
+}
+.good {
+  color: #3d622e;
+}
+dialog {
+  background: #fffefa;
+  color: #292d26;
+  border-radius: 8px;
+}
+.notice {
+  background: #fff0d9;
+}
+.bad {
+  color: #a4351b;
+}
+@media (max-width: 1100px) {
+  aside {
+    gap: 20px;
+  }
+  .side-bottom {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero .actions {
+    flex-wrap: wrap;
+  }
+  .hero h1 {
+    font-size: 44px;
+  }
+}
+@media (max-width: 720px) {
+  aside {
+    padding: 18px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-height: 0;
+  }
+  aside nav {
+    width: 100%;
+    gap: 4px;
+  }
+  nav a {
+    padding: 9px 14px;
+  }
+  main {
+    padding: 22px 16px;
+  }
+  .hero {
+    margin: 22px 0;
+    padding-bottom: 22px;
+    display: block;
+  }
+  .hero h1 {
+    font-size: 39px;
+  }
+  .hero .actions {
+    margin-top: 22px;
+  }
+  .stat {
+    padding: 18px 13px;
+  }
+  .stat .value {
+    font-size: 26px;
+  }
+  .stats {
+    gap: 10px;
+  }
+  .panel {
+    padding: 19px;
+  }
+  .chart {
+    gap: 12px;
+  }
+  .topline {
+    font-size: 10px;
+  }
+  .toolbar {
+    padding: 16px;
+  }
+}
+@media print {
+  .layout {
+    display: block;
+  }
+  .hero h1 span {
+    color: #292d26;
+  }
+  .panel,
+  .stat {
+    box-shadow: none;
+  }
+  .grid {
+    display: block;
+  }
+}

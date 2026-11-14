@@ -37,7 +37,7 @@ const filters = {
   status: "All statuses",
 };
 document.querySelector("#app").innerHTML =
-  `<section class="hero" id="overview"><div><div class="eyebrow">Supply chain workspace</div><h1>Keep your next move in stock.</h1><p>Inventory visibility, supplier confidence and a clearer demand signal.</p></div><div class="actions"><button id="export">↓ Export CSV</button><button id="add" class="primary">+ Add item</button></div></section><section class="toolbar" aria-label="Inventory filters"><label>Find an item<input id="search" type="search" placeholder="Search name or SKU"></label><label>Category<select id="category"><option>All categories</option><option>Electronics</option><option>Components</option><option>Packaging</option></select></label><label>Stock status<select id="stock-status"><option>All statuses</option><option>Healthy</option><option>Reorder</option><option>Out of stock</option></select></label></section><div id="results"></div>`;
+  `<section class="hero" id="overview"><div><div class="eyebrow">Supply chain workspace</div><h1>Operations, <span>in motion.</span></h1><p>Inventory visibility, supplier confidence and a clearer demand signal.</p></div><div class="actions"><button id="export">↓ Export CSV</button><button id="add" class="primary">+ Add item</button></div></section><section class="toolbar" aria-label="Inventory filters"><label>Find an item<input id="search" type="search" placeholder="Search name or SKU"></label><label>Category<select id="category"><option>All categories</option><option>Electronics</option><option>Components</option><option>Packaging</option></select></label><label>Stock status<select id="stock-status"><option>All statuses</option><option>Healthy</option><option>Reorder</option><option>Out of stock</option></select></label></section><div id="results"></div>`;
 const supplierFor = (item) => suppliers.find((s) => s.id === item.supplier);
 const visible = () =>
   items.filter(
@@ -111,10 +111,13 @@ function render() {
       }),
   );
   document.querySelector("#reset").onclick = () => {
-    confirmAction("Replace your inventory edits with the original demo data?", () => {
-      items = structuredClone(inventory);
-      persist("Demo inventory restored.");
-    });
+    confirmAction(
+      "Replace your inventory edits with the original demo data?",
+      () => {
+        items = structuredClone(inventory);
+        persist("Demo inventory restored.");
+      },
+    );
   };
 }
 function edit(id) {
@@ -210,3 +213,15 @@ document.querySelector("#export").onclick = () => {
 };
 render();
 if (loaded.warning) announce(loaded.warning);
+
+// Keep navigation state aligned with the section selected by mouse or keyboard.
+function updateNavigation() {
+  const active = location.hash || "#overview";
+  document.querySelectorAll("nav a").forEach((link) => {
+    if (link.getAttribute("href") === active)
+      link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+}
+window.addEventListener("hashchange", updateNavigation);
+updateNavigation();

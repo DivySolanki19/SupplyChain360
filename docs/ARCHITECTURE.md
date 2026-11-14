@@ -45,3 +45,7 @@ Incoming units have no delivery dates, so they cannot guarantee avoidance of sto
 ## Scaling path
 
 Introduce an authenticated API, schema migrations and transactional persistence before shared editing. Add optimistic concurrency, audit events, server-side validation, paginated queries, integration tests and observability. Keep the pure calculations separate and test them against accepted business examples before migrating the UI.
+
+## Visual identity
+
+A horizontal olive navigation bar, warm off-white canvas, rust accents and compact industrial cards distinguish the operations board. The dedicated `public/theme.css` layer owns the product identity; `styles.css` retains shared responsive primitives. Native inputs, keyboard focus and text-based status labels remain available.
