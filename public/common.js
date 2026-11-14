@@ -123,3 +123,9 @@ export const validText = (x, max = 120) =>
   typeof x === "string" && x.trim().length > 0 && x.length <= max;
 export const bounded = (x, min, max) =>
   typeof x === "number" && Number.isFinite(x) && x >= min && x <= max;
+export function confirmAction(message, onConfirm) {
+  openEditor(
+    `<h2 id="editor-title">Confirm change</h2><form><p>${escapeHTML(message)}</p><p class="form-error" role="alert"></p><div class="actions"><button type="button" data-cancel autofocus>Cancel</button><button type="submit" class="danger">Confirm</button></div></form>`,
+    onConfirm,
+  );
+}

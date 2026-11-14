@@ -17,6 +17,7 @@ import {
   announce,
   download,
   openEditor,
+  confirmAction,
 } from "./common.js";
 const KEY = "supplychain360.inventory.v1";
 let loaded;
@@ -103,17 +104,17 @@ function render() {
     (b) =>
       (b.onclick = () => {
         const item = items.find((x) => x.id === b.dataset.delete);
-        if (confirm("Delete " + item.name + " from this browser?")) {
+        confirmAction("Delete " + item.name + " from this browser?", () => {
           items = items.filter((x) => x.id !== item.id);
           persist("Item deleted.");
-        }
+        });
       }),
   );
   document.querySelector("#reset").onclick = () => {
-    if (confirm("Replace your inventory edits with the original demo data?")) {
+    confirmAction("Replace your inventory edits with the original demo data?", () => {
       items = structuredClone(inventory);
       persist("Demo inventory restored.");
-    }
+    });
   };
 }
 function edit(id) {

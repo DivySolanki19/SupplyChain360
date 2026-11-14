@@ -25,3 +25,5 @@ Every pull request runs the same Node tests and static build on Ubuntu. Only the
 - Browser: Chromium-based in-app browser; desktop rendering and 390-pixel viewport inspected, no page-level horizontal overflow.
 - Verified editing stock to zero, out-of-stock recalculation, reload persistence, empty search results and restoration of original stock.
 - Full cross-browser, screen-reader and automated browser coverage remain future work.
+
+Additional browser checks: record creation, confirmation dialogs and demo reset succeeded. Risk deletion cancellation retained the record; confirmed deletion removed it. CSV downloads contained the expected 12 inventory or 10 risk records, respectively. Temporary test records were removed and demo data restored.
