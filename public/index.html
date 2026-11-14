@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="SupplyChain360: an interactive portfolio application with synthetic business data."
+    />
+    <meta name="color-scheme" content="light" />
+    <title>SupplyChain360 | Operations intelligence</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23086b61'/%3E%3Ctext x='8' y='24' fill='white' font-size='24'%3ES%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="layout">
+      <aside>
+        <div class="brand">
+          <span class="logo" aria-hidden="true">S</span>SupplyChain360
+        </div>
+        <p>Operations intelligence<br />Make the next decision clearer.</p>
+        <nav aria-label="Main navigation">
+          <a href="#overview">Overview</a><a href="#inventory">Inventory</a
+          ><a href="#suppliers">Suppliers</a>
+        </nav>
+        <div class="side-bottom">
+          <span class="pill">Portfolio edition</span>
+          <p>Synthetic data. Real workflows.<br />Built by DivySolanki19.</p>
+          <a
+            style="color: #b6dbd5"
+            href="https://github.com/DivySolanki19/SupplyChain360"
+            >View source ↗</a
+          >
+        </div>
+      </aside>
+      <main id="main">
+        <div class="topline">
+          <span>Workspace / Operations intelligence</span
+          ><span class="pill">● Synthetic demo</span>
+        </div>
+        <div id="status" role="status" aria-live="polite"></div>
+        <div id="app"><p>Loading workspace…</p></div>
+        <noscript
+          ><p>
+            This application needs JavaScript enabled. All calculations run in
+            your browser.
+          </p></noscript
+        >
+        <footer>
+          <span>SupplyChain360 · An independent portfolio project</span
+          ><span>AI-assisted development · No external data services</span>
+        </footer>
+      </main>
+    </div>
+    <dialog aria-labelledby="editor-title"></dialog>
+  </body>
+</html>
